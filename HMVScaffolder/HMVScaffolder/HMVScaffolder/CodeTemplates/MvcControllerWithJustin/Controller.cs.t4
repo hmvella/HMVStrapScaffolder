@@ -1,0 +1,265 @@
+﻿<#@ template language="C#" HostSpecific="True" #>
+<#@ output extension="cs" #>
+<#@ assembly name="System.Data.Entity" #>
+<#@ assembly name="System.Data.Linq" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="System.Reflection" #>
+<#@ import namespace="System.Data.Objects.DataClasses" #>
+<#@ import namespace="System.Data.Linq.Mapping" #>
+<#
+MvcTextTemplateHost mvcHost = (MvcTextTemplateHost)(Host);
+#>
+<#
+Type controllerType = Assembly.LoadFile("D:\\work_items\\ExampleInc\\ExampleInc-Alt-21\\ExampleInc.Models\\bin\\Debug\\ExampleInc.Models.dll").GetType("ExampleInc.Models." + mvcHost.ControllerRootName);
+ 
+PropertyInfo piArray = controllerType.GetProperties(BindingFlags.Public|BindingFlags.Instance|BindingFlags.DeclaredOnly);
+ 
+string actionMethodParamerters = "", anonTypePropValString = "", gridDataAnonTypePropValString = "";
+foreach (PropertyInfo pi in piArray)
+        {
+            Type currentPropertyType = GetUnderlyingType(pi.PropertyType);
+ 
+            if(IsBindableType(currentPropertyType) && IsNeededProp(pi.Name))
+            {
+                actionMethodParamerters += currentPropertyType.Name + " " + pi.Name + " ,";
+                anonTypePropValString += pi.Name + " ,";
+                gridDataAnonTypePropValString += mvcHost.ControllerRootName.ToLower() + "." + pi.Name + " ,";
+            }
+        }
+actionMethodParamerters = actionMethodParamerters.Remove(actionMethodParamerters.Length - 1); //remove the last extra ","
+anonTypePropValString = anonTypePropValString.Remove(anonTypePropValString.Length - 1); //remove the last extra ","
+gridDataAnonTypePropValString = gridDataAnonTypePropValString.Remove(gridDataAnonTypePropValString.Length - 1); //remove the last extra ","
+#>
+using System;
+using System.Collections;
+using System.Web.Mvc;
+using ExampleInc.Filters;
+using ExampleInc.Lib.Helpers;
+using ExampleInc.Models;
+using ExampleInc.Models.UoW;
+ 
+namespace <#= mvcHost.Namespace #>
+{
+    [Authorize]
+    [NavigationFilter]
+    public class <#= mvcHost.ControllerName #> : Controller
+    {
+        //
+        // GET: /<#= mvcHost.ControllerRootName #>/
+        public ActionResult Index()
+        {
+            return RedirectToAction("List");
+        }
+ 
+<#
+if(mvcHost.AddActionMethods) {
+#>
+        //
+        // GET: /<#= mvcHost.ControllerRootName #>/Details/5
+        public ActionResult Details(<#= GetMethodParamertersString(controllerType) #>)
+        {
+            return View(<#= mvcHost.ControllerRootName #>.GetModelByPrimaryKey(new {<#= GetDataAnonTypePropValString(controllerType) #>}));
+        }
+ 
+        //
+        // GET: /<#= mvcHost.ControllerRootName #>/Create
+        public ActionResult Create()
+        {
+            return View();
+        } 
+ 
+        //
+        // POST: /<#= mvcHost.ControllerRootName #>/Create
+        [AcceptVerbs(HttpVerbs.Post)]
+        public ActionResult Create(<#= actionMethodParamerters #>)
+        {
+            if (ViewData.ModelState.IsValid)
+            {
+                // Attempt to add the user
+ 
+                if (<#= mvcHost.ControllerRootName #>.Create(new {<#= anonTypePropValString #>}, User.Identity.Name))
+                {
+                    TempData["StatusBar"] += "<#= mvcHost.ControllerRootName #> '" + ID + "' successfully added.";
+                    return RedirectToAction("List");
+                }
+ 
+                ModelState.AddModelError("_FORM", "Error");
+            }
+ 
+            // If we got this far, something failed, redisplay form
+            return View();
+        }
+ 
+        //
+        // GET: /<#= mvcHost.ControllerRootName #>/Edit/5
+        public ActionResult Edit(<#= GetMethodParamertersString(controllerType) #>)
+        {
+            return View(<#= mvcHost.ControllerRootName #>.GetModelByPrimaryKey(new {<#= GetDataAnonTypePropValString(controllerType) #>}));
+        }
+ 
+        //
+        // POST: /<#= mvcHost.ControllerRootName #>/Edit/5
+        [AcceptVerbs(HttpVerbs.Post)]
+        public ActionResult Edit(<#= actionMethodParamerters #>)
+        {
+            if (ViewData.ModelState.IsValid)
+            {
+                if (<#= mvcHost.ControllerRootName #>.Update(new {<#= GetDataAnonTypePropValString(controllerType) #>}, new {<#= anonTypePropValString #>}, User.Identity.Name))
+                {
+                    TempData["StatusBar"] += "<#= mvcHost.ControllerRootName #> '" + ID + "' successfully updated.";
+                    return RedirectToAction("List");
+                }
+ 
+                ModelState.AddModelError("_FORM", "Error");
+            }
+ 
+            // If we got this far, something failed, redisplay form
+            return View(<#= mvcHost.ControllerRootName #>.GetModelByPrimaryKey(new {<#= GetDataAnonTypePropValString(controllerType) #>}));
+        }
+ 
+        public ActionResult Delete(<#= GetMethodParamertersString(controllerType) #>)
+        {
+            if (<#= mvcHost.ControllerRootName #>.Delete(new {<#= GetDataAnonTypePropValString(controllerType) #>}))
+            {
+                TempData["StatusBar"] += "<#= mvcHost.ControllerRootName #> successfully deleted.";
+            }
+            else
+            {
+                TempData["StatusBar"] += "<#= mvcHost.ControllerRootName #> delete operation failed!.";
+            }
+            return RedirectToAction("List");
+        }
+ 
+        public ViewResult List()
+        {
+            return View();
+        }
+ 
+        public ViewResult Grid(string RowClickEventHandlerFunctionName)
+        {
+            ViewData["RowClickEventHandlerFunctionName"] = RowClickEventHandlerFunctionName;
+            return View();
+        }
+ 
+        public JsonResult GridData()
+        {
+            int totalOjectCount;
+            var <#= mvcHost.ControllerRootName.ToLower() #>sList = EmExtJSGridFilterHelper.GetResults(Request, DataMan.ObjectContext.<#= mvcHost.ControllerRootName #>, out totalOjectCount);
+            var list = new ArrayList();
+            foreach (var <#= mvcHost.ControllerRootName.ToLower() #> in <#= mvcHost.ControllerRootName.ToLower() #>sList) //populate data containers with read data
+            {
+                list.Add(new
+                             {
+                                 <#= gridDataAnonTypePropValString #>
+                             });
+            }
+            return Json(new {dataitems = list.ToArray(), totalItems = totalOjectCount});
+        }
+<#
+}
+#>
+    }
+}
+<#+
+public static List<PropertyInfo> GetEntityKeyProperties(Type type)
+{
+    List<PropertyInfo> keyProperties = new List<PropertyInfo>();
+ 
+    PropertyInfo[] properties = type.GetProperties();
+ 
+    foreach (PropertyInfo pi in properties)
+    {
+        System.Object[] attributes = pi.GetCustomAttributes(true);
+ 
+        foreach (object attribute in attributes)
+        {
+            if (attribute is EdmScalarPropertyAttribute)
+            {
+                if ((attribute as EdmScalarPropertyAttribute).EntityKeyProperty == true)
+                {
+                    keyProperties.Add(pi);
+                }
+            } else if(attribute is ColumnAttribute) {
+                if ((attribute as ColumnAttribute).IsPrimaryKey == true)
+                {
+                    keyProperties.Add(pi);
+                }
+            }
+        }
+    }
+ 
+    return keyProperties;
+}
+ 
+public bool IsBindableType(Type type)
+{
+    bool isBindable = false;
+ 
+    if (type.IsPrimitive || type.Equals(typeof(string)) || type.Equals(typeof(DateTime)) || type.Equals(typeof(decimal)) || type.Equals(typeof(Guid)) || type.Equals(typeof(DateTimeOffset)) || type.Equals(typeof(TimeSpan)))
+    {
+        isBindable = true;
+    }
+ 
+    return isBindable;
+}
+ 
+public bool IsNeededProp(string propName)
+        {
+            switch (propName)
+            {
+                case "CreationDate":
+                case "LastModifiedDate":
+                case "LastModifiedBy":
+                case "EffectiveDate":
+                case "ExpiryDate":
+                case "ServerEntryDate":
+                    return false;
+            }
+            return true;
+        }
+ 
+public string GetMethodParamertersString(Type viewDataType)
+        {
+            List<PropertyInfo> primaryKeys = GetEntityKeyProperties(viewDataType);
+ 
+            if(primaryKeys.Count > 0) {
+                string result = "";
+                foreach(PropertyInfo pk in primaryKeys)
+                {
+                    result += String.Format("{0} {1},", GetUnderlyingType(pk.PropertyType).Name , pk.Name);
+                }
+ 
+                return result.Remove(result.Length - 1); //remove the last extra ","
+            } else {
+                return "UID=Model.PrimaryKey";
+            }
+        }
+ 
+public string GetDataAnonTypePropValString(Type viewDataType)
+        {
+            List<PropertyInfo> primaryKeys = GetEntityKeyProperties(viewDataType);
+ 
+            if(primaryKeys.Count > 0) {
+                string result = "";
+                foreach(PropertyInfo pk in primaryKeys)
+                {
+                    result += String.Format("{0},", pk.Name);
+                }
+ 
+                return result.Remove(result.Length - 1); //remove the last extra ","
+            } else {
+                return "UID=Model.PrimaryKey";
+            }
+        }
+ 
+public Type GetUnderlyingType(Type type)
+{
+    Type currentPropertyType = type;
+            Type currentUnderlyingType = System.Nullable.GetUnderlyingType(currentPropertyType);
+            if(currentUnderlyingType != null) {
+                currentPropertyType = currentUnderlyingType;
+            }
+ 
+            return currentPropertyType;
+}
+#>
