@@ -1,0 +1,138 @@
+﻿<UserControl xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="HMVScaffolder.Mvc.ControllerWithContextControl">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="StyleResources.xaml"/>
+                <ResourceDictionary Source="ApplicationResources.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <StackPanel>
+        <Grid Visibility="{Binding Path=IsModelClassSupported,Mode=OneTime,Converter={StaticResource BoolToVisibility}}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition SharedSizeGroup="LabelColumn"/>
+                <ColumnDefinition Width="20"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Column="0"
+                     Content="_Model class:"
+                     Target="{Binding ElementName=modelTypeComboBox}"/>
+            <ComboBox Name="modelTypeComboBox"
+                     Grid.Column="3"
+                     IsEditable="True"
+                     TextSearch.TextPath="DisplayName"
+                     DisplayMemberPath="DisplayName"
+                     ItemsSource="{Binding ModelTypes}"
+                     SelectedItem="{Binding ModelType}"
+                     Text="{Binding ModelTypeName,Mode=TwoWay,UpdateSourceTrigger=LostFocus}">
+                <!--<ComboBox.Name>
+                    <ui:RemoveSubstring x:_PositionalParameters="_Model class:"/>
+                </ComboBox.Name>-->
+            </ComboBox>
+        </Grid>
+        <Grid Visibility="{Binding Path=IsDataContextSupported,Mode=OneTime,Converter={StaticResource BoolToVisibility}}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition SharedSizeGroup="LabelColumn"/>
+                <ColumnDefinition Width="20"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Column="0"
+                     Content="_Data context class:"
+                     Target="{Binding ElementName=dataContextComboBox}"/>
+            <Grid Column="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <ComboBox Name="dataContextComboBox"
+                         Grid.Column="0"
+                         IsEditable="True"
+                         TextSearch.TextPath="DisplayName"
+                         DisplayMemberPath="DisplayName"
+                         ItemsSource="{Binding DataContextTypes}"
+                         SelectedItem="{Binding DataContextType,Mode=OneWayToSource}"
+                         Text="{Binding DataContextTypeName,UpdateSourceTrigger=LostFocus}">
+                    <!--<ComboBox.Name>
+                        <ui:RemoveSubstring x:_PositionalParameters="_Data context class:"/>
+                    </ComboBox.Name>-->
+                </ComboBox>
+                <Button Name="dataContextAddButton"
+                         Grid.Column="1"
+                         Style="{StaticResource SmallButton}"
+                         AutomationProperties.Name="New data context..."
+                         ToolTip="New data context..."
+                         Command="{Binding AddNewDataContextCommand}">
+                    <Path Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" StrokeThickness="2">
+                        <Path.Data>
+                            <GeometryGroup>
+                                <LineGeometry StartPoint="0,5" EndPoint="10,5"/>
+                                <LineGeometry StartPoint="5,10" EndPoint="5,0"/>
+                            </GeometryGroup>
+                        </Path.Data>
+                    </Path>
+                </Button>
+            </Grid>
+        </Grid>
+        <StackPanel Orientation="Horizontal" Visibility="{Binding Path=IsModelClassSupported,Mode=OneTime,Converter={StaticResource BoolToVisibility}}">
+            <CheckBox Name="useAsyncControllerActions"
+                         Content="Use _async controller actions"
+                         IsEnabled="{Binding IsAsyncSupported}"
+                         IsChecked="{Binding IsAsyncSelected}"/>
+            <Image ToolTip="Upgrade to Entity Framework 6 or greater to use async controller actions."
+                         Margin="5 0 0 0"
+                         MaxHeight="15"
+                         MaxWidth="15"
+                         Source="{Binding AsyncInformationIcon}"
+                         Visibility="{Binding IsAsyncSupported,Converter={StaticResource InverseBoolToVisibility}}"/>
+        </StackPanel>
+        <StackPanel Visibility="{Binding Path=IsViewGenerationSupported,Mode=OneTime,Converter={StaticResource BoolToVisibility}}">
+            <Label Content="View _name:"/>
+            <CheckBox Name="generateViewsCheckBox"
+                     Content="Generate _views"
+                     IsChecked="{Binding Path=IsViewGenerationSelected,Mode=TwoWay}"/>
+            <CheckBox Name="referenceScriptLibrariesCheckBox"
+                     Content="_Reference script libraries"
+                     IsEnabled="{Binding Path=IsViewGenerationSelected}"
+                     IsChecked="{Binding Path=IsReferenceScriptLibrariesSelected}"/>
+            <CheckBox Name="useLayoutPageCheckBox"
+                     Style="{StaticResource BottomCheckBox}"
+                     Content="_Use a layout page:"
+                     IsEnabled="{Binding Path=IsViewGenerationSelected}"
+                     IsChecked="{Binding Path=IsLayoutPageSelected}"/>
+            <Grid Margin="20 0 0 5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.IsEnabled>
+                    <MultiBinding Mode="OneWay" Converter="{StaticResource MultiAndBooleanConverter}">
+                        <Binding ElementName="generateViewsCheckBox" Path="IsChecked"/>
+                        <Binding ElementName="useLayoutPageCheckBox" Path="IsChecked"/>
+                    </MultiBinding>
+                </Grid.IsEnabled>
+                <TextBox Name="layoutPageFileTextBox"
+                         Grid.Column="0"
+                         Grid.Row="0"
+                         AutomationProperties.Name="Specify a layout page"
+                         Text="{Binding LayoutPageFile}"/>
+                <Button Name="browseFiles"
+                         Grid.Column="1"
+                         Grid.Row="0"
+                         Style="{StaticResource SmallButton}"
+                         Content="..."
+                         AutomationProperties.Name="Choose a layout page"
+                         Command="{Binding SelectLayoutCommand}"/>
+                <Label Style="{StaticResource LayoutLabel}"
+                         Grid.ColumnSpan="2"
+                         Grid.Row="1"
+                         Content="(Leave empty if it is set in a Razor __viewstart file)"/>
+            </Grid>
+        </StackPanel>
+    </StackPanel>
+</UserControl>

@@ -1,0 +1,80 @@
+\\lan\dfs\Users\justinfarrugia\My Documents\Visual Studio 2015\Projects\HMVScaffolder\HMVScaffolder\HMVScaffolder\bin\Debug\Templates\CustomCodeGenerator\CustomTextTemplate.cs.t4
+\\lan\dfs\Users\justinfarrugia\My Documents\Visual Studio 2015\Projects\HMVScaffolder\HMVScaffolder\HMVScaffolder\bin\Debug\HMVScaffolder.dll.config
+\\lan\dfs\Users\justinfarrugia\My Documents\Visual Studio 2015\Projects\HMVScaffolder\HMVScaffolder\HMVScaffolder\bin\Debug\HMVScaffolder.dll
+\\lan\dfs\Users\justinfarrugia\My Documents\Visual Studio 2015\Projects\HMVScaffolder\HMVScaffolder\HMVScaffolder\bin\Debug\HMVScaffolder.pdb
+\\lan\dfs\Users\justinfarrugia\My Documents\Visual Studio 2015\Projects\HMVScaffolder\HMVScaffolder\HMVScaffolder\bin\Debug\envdte.dll
+\\lan\dfs\Users\justinfarrugia\My Documents\Visual Studio 2015\Projects\HMVScaffolder\HMVScaffolder\HMVScaffolder\bin\Debug\Microsoft.AspNet.Scaffolding.12.0.dll
+\\lan\dfs\Users\justinfarrugia\My Documents\Visual Studio 2015\Projects\HMVScaffolder\HMVScaffolder\HMVScaffolder\bin\Debug\Microsoft.AspNet.Scaffolding.EntityFramework.12.0.dll
+\\lan\dfs\Users\justinfarrugia\My Documents\Visual Studio 2015\Projects\HMVScaffolder\HMVScaffolder\HMVScaffolder\bin\Debug\Microsoft.VisualStudio.ComponentModelHost.dll
+\\lan\dfs\Users\justinfarrugia\My Documents\Visual Studio 2015\Projects\HMVScaffolder\HMVScaffolder\HMVScaffolder\bin\Debug\Microsoft.VisualStudio.CoreUtility.dll
+\\lan\dfs\Users\justinfarrugia\My Documents\Visual Studio 2015\Projects\HMVScaffolder\HMVScaffolder\HMVScaffolder\bin\Debug\Microsoft.VisualStudio.Editor.dll
+\\lan\dfs\Users\justinfarrugia\My Documents\Visual Studio 2015\Projects\HMVScaffolder\HMVScaffolder\HMVScaffolder\bin\Debug\Microsoft.VisualStudio.OLE.Interop.dll
+\\lan\dfs\Users\justinfarrugia\My Documents\Visual Studio 2015\Projects\HMVScaffolder\HMVScaffolder\HMVScaffolder\bin\Debug\Microsoft.VisualStudio.Shell.15.0.dll
+\\lan\dfs\Users\justinfarrugia\My Documents\Visual Studio 2015\Projects\HMVScaffolder\HMVScaffolder\HMVScaffolder\bin\Debug\Microsoft.VisualStudio.Shell.Immutable.10.0.dll
+\\lan\dfs\Users\justinfarrugia\My Documents\Visual Studio 2015\Projects\HMVScaffolder\HMVScaffolder\HMVScaffolder\bin\Debug\Microsoft.VisualStudio.Shell.Interop.8.0.dll
+\\lan\dfs\Users\justinfarrugia\My Documents\Visual Studio 2015\Projects\HMVScaffolder\HMVScaffolder\HMVScaffolder\bin\Debug\Microsoft.VisualStudio.Shell.Interop.dll
+\\lan\dfs\Users\justinfarrugia\My Documents\Visual Studio 2015\Projects\HMVScaffolder\HMVScaffolder\HMVScaffolder\bin\Debug\Microsoft.VisualStudio.Text.Data.dll
+\\lan\dfs\Users\justinfarrugia\My Documents\Visual Studio 2015\Projects\HMVScaffolder\HMVScaffolder\HMVScaffolder\bin\Debug\Microsoft.VisualStudio.TextManager.Interop.dll
+\\lan\dfs\Users\justinfarrugia\My Documents\Visual Studio 2015\Projects\HMVScaffolder\HMVScaffolder\HMVScaffolder\bin\Debug\stdole.dll
+\\lan\dfs\Users\justinfarrugia\My Documents\Visual Studio 2015\Projects\HMVScaffolder\HMVScaffolder\HMVScaffolder\bin\Debug\Microsoft.VisualStudio.Shell.Design.dll
+\\lan\dfs\Users\justinfarrugia\My Documents\Visual Studio 2015\Projects\HMVScaffolder\HMVScaffolder\HMVScaffolder\bin\Debug\Microsoft.VisualStudio.TextTemplating.Interfaces.11.0.dll
+\\lan\dfs\Users\justinfarrugia\My Documents\Visual Studio 2015\Projects\HMVScaffolder\HMVScaffolder\HMVScaffolder\bin\Debug\Microsoft.VisualStudio.TextTemplating.Interfaces.10.0.dll
+\\lan\dfs\Users\justinfarrugia\My Documents\Visual Studio 2015\Projects\HMVScaffolder\HMVScaffolder\HMVScaffolder\bin\Debug\Microsoft.VisualStudio.Threading.dll
+\\lan\dfs\Users\justinfarrugia\My Documents\Visual Studio 2015\Projects\HMVScaffolder\HMVScaffolder\HMVScaffolder\bin\Debug\Microsoft.VisualStudio.Text.Logic.dll
+\\lan\dfs\Users\justinfarrugia\My Documents\Visual Studio 2015\Projects\HMVScaffolder\HMVScaffolder\HMVScaffolder\bin\Debug\Microsoft.VisualStudio.TextManager.Interop.8.0.dll
+\\lan\dfs\Users\justinfarrugia\My Documents\Visual Studio 2015\Projects\HMVScaffolder\HMVScaffolder\HMVScaffolder\bin\Debug\Microsoft.VisualStudio.Text.UI.dll
+\\lan\dfs\Users\justinfarrugia\My Documents\Visual Studio 2015\Projects\HMVScaffolder\HMVScaffolder\HMVScaffolder\bin\Debug\Microsoft.VisualStudio.Text.UI.Wpf.dll
+\\lan\dfs\Users\justinfarrugia\My Documents\Visual Studio 2015\Projects\HMVScaffolder\HMVScaffolder\HMVScaffolder\bin\Debug\Microsoft.VisualStudio.VSHelp.dll
+\\lan\dfs\Users\justinfarrugia\My Documents\Visual Studio 2015\Projects\HMVScaffolder\HMVScaffolder\HMVScaffolder\bin\Debug\Microsoft.VisualStudio.Utilities.dll
+\\lan\dfs\Users\justinfarrugia\My Documents\Visual Studio 2015\Projects\HMVScaffolder\HMVScaffolder\HMVScaffolder\bin\Debug\Microsoft.VisualStudio.Shell.Framework.dll
+\\lan\dfs\Users\justinfarrugia\My Documents\Visual Studio 2015\Projects\HMVScaffolder\HMVScaffolder\HMVScaffolder\bin\Debug\Microsoft.VisualStudio.Imaging.dll
+\\lan\dfs\Users\justinfarrugia\My Documents\Visual Studio 2015\Projects\HMVScaffolder\HMVScaffolder\HMVScaffolder\bin\Debug\System.Threading.Tasks.Dataflow.dll
+\\lan\dfs\Users\justinfarrugia\My Documents\Visual Studio 2015\Projects\HMVScaffolder\HMVScaffolder\HMVScaffolder\bin\Debug\Microsoft.VisualStudio.Shell.Interop.9.0.dll
+\\lan\dfs\Users\justinfarrugia\My Documents\Visual Studio 2015\Projects\HMVScaffolder\HMVScaffolder\HMVScaffolder\bin\Debug\Microsoft.VisualStudio.ProjectAggregator.dll
+\\lan\dfs\Users\justinfarrugia\My Documents\Visual Studio 2015\Projects\HMVScaffolder\HMVScaffolder\HMVScaffolder\bin\Debug\Microsoft.VisualStudio.ImageCatalog.dll
+\\lan\dfs\Users\justinfarrugia\My Documents\Visual Studio 2015\Projects\HMVScaffolder\HMVScaffolder\HMVScaffolder\bin\Debug\Microsoft.VisualStudio.Validation.dll
+\\lan\dfs\Users\justinfarrugia\My Documents\Visual Studio 2015\Projects\HMVScaffolder\HMVScaffolder\HMVScaffolder\bin\Debug\Microsoft.VisualStudio.Designer.Interfaces.dll
+\\lan\dfs\Users\justinfarrugia\My Documents\Visual Studio 2015\Projects\HMVScaffolder\HMVScaffolder\HMVScaffolder\bin\Debug\Microsoft.MSXML.dll
+\\lan\dfs\Users\justinfarrugia\My Documents\Visual Studio 2015\Projects\HMVScaffolder\HMVScaffolder\HMVScaffolder\bin\Debug\Microsoft.VisualStudio.GraphModel.dll
+\\lan\dfs\Users\justinfarrugia\My Documents\Visual Studio 2015\Projects\HMVScaffolder\HMVScaffolder\HMVScaffolder\bin\Debug\Microsoft.AspNet.Scaffolding.EntityFramework.12.0.xml
+\\lan\dfs\Users\justinfarrugia\My Documents\Visual Studio 2015\Projects\HMVScaffolder\HMVScaffolder\HMVScaffolder\bin\Debug\Microsoft.VisualStudio.CoreUtility.xml
+\\lan\dfs\Users\justinfarrugia\My Documents\Visual Studio 2015\Projects\HMVScaffolder\HMVScaffolder\HMVScaffolder\bin\Debug\Microsoft.VisualStudio.Editor.xml
+\\lan\dfs\Users\justinfarrugia\My Documents\Visual Studio 2015\Projects\HMVScaffolder\HMVScaffolder\HMVScaffolder\bin\Debug\Microsoft.VisualStudio.Shell.Immutable.10.0.xml
+\\lan\dfs\Users\justinfarrugia\My Documents\Visual Studio 2015\Projects\HMVScaffolder\HMVScaffolder\HMVScaffolder\bin\Debug\Microsoft.VisualStudio.Text.Data.xml
+\\lan\dfs\Users\justinfarrugia\My Documents\Visual Studio 2015\Projects\HMVScaffolder\HMVScaffolder\HMVScaffolder\bin\Debug\Microsoft.VisualStudio.Threading.xml
+\\lan\dfs\Users\justinfarrugia\My Documents\Visual Studio 2015\Projects\HMVScaffolder\HMVScaffolder\HMVScaffolder\bin\Debug\Microsoft.VisualStudio.Text.Logic.xml
+\\lan\dfs\Users\justinfarrugia\My Documents\Visual Studio 2015\Projects\HMVScaffolder\HMVScaffolder\HMVScaffolder\bin\Debug\Microsoft.VisualStudio.Text.UI.xml
+\\lan\dfs\Users\justinfarrugia\My Documents\Visual Studio 2015\Projects\HMVScaffolder\HMVScaffolder\HMVScaffolder\bin\Debug\Microsoft.VisualStudio.Text.UI.Wpf.xml
+\\lan\dfs\Users\justinfarrugia\My Documents\Visual Studio 2015\Projects\HMVScaffolder\HMVScaffolder\HMVScaffolder\bin\Debug\Microsoft.VisualStudio.Utilities.xml
+\\lan\dfs\Users\justinfarrugia\My Documents\Visual Studio 2015\Projects\HMVScaffolder\HMVScaffolder\HMVScaffolder\bin\Debug\Microsoft.VisualStudio.Imaging.xml
+\\lan\dfs\Users\justinfarrugia\My Documents\Visual Studio 2015\Projects\HMVScaffolder\HMVScaffolder\HMVScaffolder\bin\Debug\Microsoft.VisualStudio.ImageCatalog.xml
+\\lan\dfs\Users\justinfarrugia\My Documents\Visual Studio 2015\Projects\HMVScaffolder\HMVScaffolder\HMVScaffolder\bin\Debug\Microsoft.VisualStudio.Validation.xml
+\\lan\dfs\Users\justinfarrugia\My Documents\Visual Studio 2015\Projects\HMVScaffolder\HMVScaffolder\HMVScaffolder\bin\Debug\Microsoft.VisualStudio.Designer.Interfaces.xml
+\\lan\dfs\Users\justinfarrugia\My Documents\Visual Studio 2015\Projects\HMVScaffolder\HMVScaffolder\HMVScaffolder\obj\Debug\UI\SelectModelWindow.baml
+\\lan\dfs\Users\justinfarrugia\My Documents\Visual Studio 2015\Projects\HMVScaffolder\HMVScaffolder\HMVScaffolder\obj\Debug\UI\SelectModelWindow.g.cs
+\\lan\dfs\Users\justinfarrugia\My Documents\Visual Studio 2015\Projects\HMVScaffolder\HMVScaffolder\HMVScaffolder\obj\Debug\HMVScaffolder_MarkupCompile.cache
+\\lan\dfs\Users\justinfarrugia\My Documents\Visual Studio 2015\Projects\HMVScaffolder\HMVScaffolder\HMVScaffolder\obj\Debug\HMVScaffolder.g.resources
+\\lan\dfs\Users\justinfarrugia\My Documents\Visual Studio 2015\Projects\HMVScaffolder\HMVScaffolder\HMVScaffolder\obj\Debug\HMVScaffolder.Properties.Resources.resources
+\\lan\dfs\Users\justinfarrugia\My Documents\Visual Studio 2015\Projects\HMVScaffolder\HMVScaffolder\HMVScaffolder\obj\Debug\HMVScaffolder.csproj.GenerateResource.Cache
+\\lan\dfs\Users\justinfarrugia\My Documents\Visual Studio 2015\Projects\HMVScaffolder\HMVScaffolder\HMVScaffolder\obj\Debug\HMVScaffolder.csproj.CoreCompileInputs.cache
+\\lan\dfs\Users\justinfarrugia\My Documents\Visual Studio 2015\Projects\HMVScaffolder\HMVScaffolder\HMVScaffolder\obj\Debug\HMVScaffolder.dll
+\\lan\dfs\Users\justinfarrugia\My Documents\Visual Studio 2015\Projects\HMVScaffolder\HMVScaffolder\HMVScaffolder\obj\Debug\HMVScaffolder.pdb
+\\lan\dfs\Users\justinfarrugia\My Documents\Visual Studio 2015\Projects\HMVScaffolder\HMVScaffolder\HMVScaffolder\obj\Debug\HMVScaffolder.csprojResolveAssemblyReference.cache
+C:\Git\Scaffolding\HMVScaffolder\HMVScaffolder\HMVScaffolder\obj\Debug\UI\AddCancelButtonControl.baml
+C:\Git\Scaffolding\HMVScaffolder\HMVScaffolder\HMVScaffolder\obj\Debug\UI\ControllerWithContextControl.baml
+C:\Git\Scaffolding\HMVScaffolder\HMVScaffolder\HMVScaffolder\obj\Debug\UI\SelectModelWindow.baml
+C:\Git\Scaffolding\HMVScaffolder\HMVScaffolder\HMVScaffolder\obj\Debug\UI\AddCancelButtonControl.g.cs
+C:\Git\Scaffolding\HMVScaffolder\HMVScaffolder\HMVScaffolder\obj\Debug\UI\ApplicationResources.g.cs
+C:\Git\Scaffolding\HMVScaffolder\HMVScaffolder\HMVScaffolder\obj\Debug\UI\AreaScaffolderDialog.g.cs
+C:\Git\Scaffolding\HMVScaffolder\HMVScaffolder\HMVScaffolder\obj\Debug\UI\ControllerNameControl.g.cs
+C:\Git\Scaffolding\HMVScaffolder\HMVScaffolder\HMVScaffolder\obj\Debug\UI\ControllerScaffolderDialog.g.cs
+C:\Git\Scaffolding\HMVScaffolder\HMVScaffolder\HMVScaffolder\obj\Debug\UI\ControllerWithContextControl.g.cs
+C:\Git\Scaffolding\HMVScaffolder\HMVScaffolder\HMVScaffolder\obj\Debug\UI\CreateDataContextDialog.g.cs
+C:\Git\Scaffolding\HMVScaffolder\HMVScaffolder\HMVScaffolder\obj\Debug\UI\DependencyScaffolderDialog.g.cs
+C:\Git\Scaffolding\HMVScaffolder\HMVScaffolder\HMVScaffolder\obj\Debug\UI\SelectModelWindow.g.cs
+C:\Git\Scaffolding\HMVScaffolder\HMVScaffolder\HMVScaffolder\obj\Debug\UI\StyleResources.g.cs
+C:\Git\Scaffolding\HMVScaffolder\HMVScaffolder\HMVScaffolder\obj\Debug\UI\ViewScaffolderControl.g.cs
+C:\Git\Scaffolding\HMVScaffolder\HMVScaffolder\HMVScaffolder\obj\Debug\UI\ViewScaffolderDialog.g.cs
+C:\Git\Scaffolding\HMVScaffolder\HMVScaffolder\HMVScaffolder\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Git\Scaffolding\HMVScaffolder\HMVScaffolder\HMVScaffolder\obj\Debug\HMVScaffolder_MarkupCompile.cache
+C:\Git\Scaffolding\HMVScaffolder\HMVScaffolder\HMVScaffolder\obj\Debug\HMVScaffolder_MarkupCompile.lref

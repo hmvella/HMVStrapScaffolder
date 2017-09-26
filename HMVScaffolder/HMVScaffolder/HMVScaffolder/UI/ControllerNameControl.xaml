@@ -1,0 +1,25 @@
+﻿<UserControl xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:ui="clr-namespace:HMVScaffolder.Mvc"
+             x:Class="HMVScaffolder.Mvc.ControllerNameControl">
+    <UserControl.Resources>
+        <ResourceDictionary Source="StyleResources.xaml"/>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition SharedSizeGroup="LabelColumn"/>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Label Content="_Controller name:"
+                 Grid.Column="0"
+                 Target="{Binding ElementName=controllerNameTextBox}"/>
+        <TextBox Name="controllerNameTextBox"
+                 Grid.Column="2"
+                 Text="{Binding ControllerName,UpdateSourceTrigger=PropertyChanged}">
+            <!--<TextBox.Name>
+                <ui:RemoveSubstring x:_PositionalParameters="{x:Static res:Resources.ControllerNameLabel}"/>
+            </TextBox.Name>-->
+        </TextBox>
+    </Grid>
+</UserControl>

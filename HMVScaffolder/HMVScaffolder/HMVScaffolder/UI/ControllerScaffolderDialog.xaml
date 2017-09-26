@@ -1,0 +1,30 @@
+﻿<mvc:ValidatingDialogWindow
+    xmlns:mvc="clr-namespace:HMVScaffolder.Mvc"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    x:Class="HMVScaffolder.Mvc.ControllerScaffolderDialog"
+     Window.Title="Add Controller"
+     Window.WindowStartupLocation="CenterOwner"
+     Window.ResizeMode="CanResize"
+     Window.SizeToContent="Height"
+     FrameworkElement.MinWidth="600"
+     mvc:DialogHost="{Binding DialogHost,Mode=OneWayToSource}"
+     FrameworkElement.Width="{Binding DialogWidth,Mode=TwoWay}">
+    <mvc:ValidatingDialogWindow.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="StyleResources.xaml"/>
+                <ResourceDictionary Source="ApplicationResources.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </mvc:ValidatingDialogWindow.Resources>
+    <StackPanel Grid.IsSharedSizeScope="True">
+        <mvc:ControllerWithContextControl Style="{StaticResource UserControlStyle}" Visibility="{Binding Path=IsModelClassSupported,Mode=OneTime,Converter={StaticResource BoolToVisibility}}"/>
+        <StackPanel Style="{StaticResource StackPanelBackgroundStyle}">
+            <mvc:ControllerNameControl Style="{StaticResource UserControlStyle}"/>
+            <StackPanel Style="{StaticResource AddCancelStackPanel}">
+                <mvc:AddCancelButtonControl AddButtonClick="AddButton_Click"/>
+            </StackPanel>
+        </StackPanel>
+    </StackPanel>
+</mvc:ValidatingDialogWindow>

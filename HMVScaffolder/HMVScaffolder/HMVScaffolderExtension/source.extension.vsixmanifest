@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
+    <Metadata>
+        <Identity Id="HMVScaffolderExtension..40e7bb7e-f72d-44cf-8439-2567be2590c6" Version="2.1" Language="en-US" Publisher="Justin Farrugia" />
+        <DisplayName>HMVScaffolder</DisplayName>
+        <Description xml:space="preserve">MVC Bootstrap Table Server-Side with Entity Framework</Description>
+    </Metadata>
+    <Installation>
+        <InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[15.0]" />
+    </Installation>
+    <Dependencies>
+        <Dependency Id="Microsoft.Framework.NDP" DisplayName="Microsoft .NET Framework" d:Source="Manual" Version="[4.5,)" />
+    </Dependencies>
+    <Prerequisites>
+        <Prerequisite Id="Microsoft.VisualStudio.Component.CoreEditor" Version="[15.0,16.0)" DisplayName="Visual Studio core editor" />
+    </Prerequisites>
+    <Assets>
+        <Asset Type="Microsoft.VisualStudio.Assembly" d:Source="File" Path="HMVScaffolder.Mvc.5.0.dll" AssemblyName="HMVScaffolder.Mvc.5.0, Version=5.2.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+        <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" Path="|HMVScaffolder|" d:ProjectName="HMVScaffolder" />
+    </Assets>
+</PackageManifest>

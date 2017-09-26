@@ -1,0 +1,22 @@
+﻿<mvc:ValidatingDialogWindow
+    xmlns:mvc="clr-namespace:HMVScaffolder.Mvc"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    x:Class="HMVScaffolder.Mvc.ViewScaffolderDialog"
+     Window.Title="Add View"
+     Window.WindowStartupLocation="CenterOwner"
+     Window.ResizeMode="CanResize"
+     Window.SizeToContent="Height"
+     FrameworkElement.MinWidth="600"
+     mvc:DialogHost="{Binding DialogHost,Mode=OneWayToSource}"
+     FrameworkElement.Width="{Binding DialogWidth,Mode=TwoWay}">
+    <mvc:ValidatingDialogWindow.Resources>
+        <ResourceDictionary Source="StyleResources.xaml"/>
+    </mvc:ValidatingDialogWindow.Resources>
+    <StackPanel>
+        <mvc:ViewScaffolderControl Style="{StaticResource UserControlStyle}"/>
+        <StackPanel Style="{StaticResource AddCancelStackPanel}">
+            <mvc:AddCancelButtonControl AddButtonClick="AddButton_Click"/>
+        </StackPanel>
+    </StackPanel>
+</mvc:ValidatingDialogWindow>

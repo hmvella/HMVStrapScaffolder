@@ -1,0 +1,38 @@
+﻿<mvc:ValidatingDialogWindow
+    xmlns:mvc="clr-namespace:HMVScaffolder.Mvc"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    x:Class="HMVScaffolder.Mvc.AreaScaffolderDialog"
+     Window.Title="Add Area"
+     Window.WindowStartupLocation="CenterOwner"
+     Window.ResizeMode="CanResize"
+     Window.SizeToContent="Height"
+     FrameworkElement.MinWidth="600"
+     mvc:DialogHost="{Binding DialogHost,Mode=OneWayToSource}"
+     FrameworkElement.Width="{Binding DialogWidth,Mode=TwoWay}">
+    <mvc:ValidatingDialogWindow.Resources>
+        <ResourceDictionary Source="StyleResources.xaml"/>
+    </mvc:ValidatingDialogWindow.Resources>
+    <StackPanel>
+        <Grid Style="{StaticResource PanelStyle}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="20"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Label Content="Area _name:"
+                     Grid.Column="0"
+                     Target="{Binding ElementName=areaNameTextBox}"/>
+            <TextBox Name="areaNameTextBox"
+                     Grid.Column="2"
+                     Text="{Binding AreaName,UpdateSourceTrigger=PropertyChanged}">
+                <!--<TextBox.Name>
+                    <mvc:RemoveSubstring x:_PositionalParameters="{x:Static res:Resources.AreaNameLabel}"/>
+                </TextBox.Name>-->
+            </TextBox>
+        </Grid>
+        <StackPanel Style="{StaticResource AddCancelStackPanel}">
+            <mvc:AddCancelButtonControl AddButtonClick="AddButton_Click"/>
+        </StackPanel>
+    </StackPanel>
+</mvc:ValidatingDialogWindow>

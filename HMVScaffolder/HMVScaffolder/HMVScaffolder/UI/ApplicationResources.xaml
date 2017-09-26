@@ -1,0 +1,9 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:ui1="clr-namespace:HMVScaffolder.Mvc"
+                    x:Class="HMVScaffolder.Mvc.ApplicationResources">
+    <BooleanToVisibilityConverter x:Key="BoolToVisibility"/>
+    <ui1:MultiAndBooleanConverter x:Key="MultiAndBooleanConverter"/>
+    <ui1:InverseBooleanConverter x:Key="InverseBooleanConverter"/>
+    <ui1:InverseBooleanToVisibilityConverter x:Key="InverseBoolToVisibility"/>
+</ResourceDictionary>

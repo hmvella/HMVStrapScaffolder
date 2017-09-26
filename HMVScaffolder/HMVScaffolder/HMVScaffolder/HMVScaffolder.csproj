@@ -1,0 +1,306 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C5F95FF6-87AD-44E6-A182-486E3254255A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HMVScaffolder</RootNamespace>
+    <AssemblyName>HMVScaffolder</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="envdte, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="envdte80, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Scaffolding.12.0, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\Extensions\Microsoft\Web Tools\Scaffolding\Microsoft.AspNet.Scaffolding.12.0.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Scaffolding.EntityFramework.12.0, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=x86" />
+    <Reference Include="Microsoft.VisualStudio.ComponentModelHost, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualStudio.CoreUtility, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Microsoft.VisualStudio.Editor, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualStudio.OLE.Interop, Version=7.1.40304.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Microsoft.VisualStudio.Shell.15.0, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Microsoft.VisualStudio.Shell.Immutable.10.0, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualStudio.Shell.Interop, Version=7.1.40304.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Microsoft.VisualStudio.Shell.Interop.10.0, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Shell.Interop.8.0, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Microsoft.VisualStudio.Text.Data, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualStudio.TextManager.Interop, Version=7.1.40304.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="NuGet.VisualStudio, Version=4.3.0.5, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\NuGet.VisualStudio.4.3.0\lib\net46\NuGet.VisualStudio.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="UIAutomationTypes" />
+    <Reference Include="VSLangProj, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\..\..\..\Tasks\3. Custom Scaffolding Templates\MVCDecompilation\Microsoft.AspNet.Scaffolding.Mvc.5.0References\VSLangProj.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Configuration\MvcConfigurationEditor.cs" />
+    <Compile Include="Configuration\XmlConstants.cs" />
+    <Compile Include="Metadata\CodeModelModelMetadata.cs" />
+    <Compile Include="Metadata\CodeModelPropertyMetadata.cs" />
+    <Compile Include="Metadata\TypeNames.cs" />
+    <Compile Include="Mvc\AddDependencyUtil.cs" />
+    <Compile Include="Mvc\AssemblyVersions.cs" />
+    <Compile Include="Mvc\BitmapExtensions.cs" />
+    <Compile Include="Mvc\CodeTypeFilter.cs" />
+    <Compile Include="Mvc\ConfigurationEditor.cs" />
+    <Compile Include="Mvc\ControllerScaffolderModel.cs" />
+    <Compile Include="Mvc\ControllerScaffolder_TFramework_.cs" />
+    <Compile Include="Mvc\ControllerWithContextScaffolder_TFramework_.cs" />
+    <Compile Include="Mvc\CoreScaffoldingUtil.cs" />
+    <Compile Include="Mvc\DependencyInstaller.cs" />
+    <Compile Include="Mvc\FrameworkDependencyStatus.cs" />
+    <Compile Include="Mvc\IFrameworkDependency.cs" />
+    <Compile Include="Mvc\InteractiveScaffolder_TModel, TFramework_.cs" />
+    <Compile Include="Mvc\IScaffoldingSettings.cs" />
+    <Compile Include="Mvc\MvcControllerEmptyScaffolder.cs" />
+    <Compile Include="Mvc\MvcControllerEmptyScaffolderFactory.cs" />
+    <Compile Include="Mvc\MvcControllerWithContextScaffolder.cs" />
+    <Compile Include="Mvc\MvcControllerWithContextScaffolderFactoryServersideTable.cs" />
+    <Compile Include="Mvc\MvcControllerWithContextScaffolderFactoryClientsideTable.cs" />
+    <Compile Include="Mvc\MvcControllerWithContextScaffolderFactory.cs" />
+    <Compile Include="Mvc\MvcDependencyInstaller.cs" />
+    <Compile Include="Mvc\MvcFrameworkDependency.cs" />
+    <Compile Include="Mvc\MvcFullDependencyInstaller.cs" />
+    <Compile Include="Mvc\MvcProjectUtil.cs" />
+    <Compile Include="Mvc\MvcViewScaffolder.cs" />
+    <Compile Include="Mvc\MvcViewScaffolderFactory.cs" />
+    <Compile Include="Mvc\MvcViewScaffolderModel.cs" />
+    <Compile Include="Mvc\MvcViewTemplates.cs" />
+    <Compile Include="Mvc\NativeMethods.cs" />
+    <Compile Include="Mvc\NuGetPackages.cs" />
+    <Compile Include="Mvc\OleServiceProviderExtensions.cs" />
+    <Compile Include="Mvc\OverpostingProtection.cs" />
+    <Compile Include="Mvc\PackageVersions.cs" />
+    <Compile Include="Mvc\ProjectItemExtensions.cs" />
+    <Compile Include="Mvc\ProjectReferences.cs" />
+    <Compile Include="Mvc\ScaffolderFactory_TFramework_.cs" />
+    <Compile Include="Mvc\ScaffolderFilter.cs" />
+    <Compile Include="Mvc\ScaffolderIcons.cs" />
+    <Compile Include="Mvc\ScaffolderModel.cs" />
+    <Compile Include="Mvc\ScaffolderVersions.cs" />
+    <Compile Include="Mvc\SemanticVersionParser.cs" />
+    <Compile Include="Mvc\ServiceProviderExtensions.cs" />
+    <Compile Include="Mvc\StringUtil.cs" />
+    <Compile Include="Mvc\TemplateSearchDirectories.cs" />
+    <Compile Include="Mvc\ValidationUtil.cs" />
+    <Compile Include="Mvc\ViewTemplate.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReadMe\CSharpRules.cs" />
+    <Compile Include="ReadMe\LanguageRules.cs" />
+    <Compile Include="ReadMe\MvcFullDependencyReadMe.cs" />
+    <Compile Include="ReadMe\MvcMinimalDependencyReadMe.cs" />
+    <Compile Include="ReadMe\ReadMeFormatting.cs" />
+    <Compile Include="ReadMe\ReadMeGenerator.cs" />
+    <Compile Include="ReadMe\VisualBasicRules.cs" />
+    <Compile Include="Resources\ResourcesExt.cs" />
+    <Compile Include="Telemetry\CodeGenerationContextExtensions.cs" />
+    <Compile Include="Telemetry\MvcControllerScaffolderOptions.cs" />
+    <Compile Include="Telemetry\MvcViewScaffolderOptions.cs" />
+    <Compile Include="UI\AddCancelButtonControl.xaml.cs">
+      <DependentUpon>AddCancelButtonControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ApplicationResources.xaml.cs">
+      <DependentUpon>ApplicationResources.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\AreaScaffolderDialog.xaml.cs">
+      <DependentUpon>AreaScaffolderDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ControllerNameControl.xaml.cs">
+      <DependentUpon>ControllerNameControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ControllerScaffolderDialog.xaml.cs">
+      <DependentUpon>ControllerScaffolderDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ControllerWithContextControl.xaml.cs">
+      <DependentUpon>ControllerWithContextControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CreateDataContextDialog.xaml.cs">
+      <DependentUpon>CreateDataContextDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\DependencyScaffolderDialog.xaml.cs">
+      <DependentUpon>DependencyScaffolderDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ModelType.cs" />
+    <Compile Include="UI\StyleResources.xaml.cs">
+      <DependentUpon>StyleResources.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ViewScaffolderControl.xaml.cs">
+      <DependentUpon>ViewScaffolderControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ViewScaffolderDialog.xaml.cs">
+      <DependentUpon>ViewScaffolderDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterface\DataContextModelTypeComparer.cs" />
+    <Compile Include="UserInterface\DefaultDialogSize.cs" />
+    <Compile Include="UserInterface\DropDownTextBox.cs" />
+    <Compile Include="UserInterface\FocusFirstElementBehavior.cs" />
+    <Compile Include="UserInterface\IDialogHost.cs" />
+    <Compile Include="UserInterface\IDialogSettings.cs" />
+    <Compile Include="UserInterface\InverseBooleanConverter.cs" />
+    <Compile Include="UserInterface\InverseBooleanToVisibilityConverter.cs" />
+    <Compile Include="UserInterface\ModelType.cs" />
+    <Compile Include="UserInterface\MultiAndBooleanConverter.cs" />
+    <Compile Include="UserInterface\MvcControllerScaffolderViewModel.cs" />
+    <Compile Include="UserInterface\MvcDataContextViewModel.cs" />
+    <Compile Include="UserInterface\MvcViewScaffolderViewModel.cs" />
+    <Compile Include="UserInterface\NotifyPropertyChanged.cs" />
+    <Compile Include="UserInterface\ProjectItemSelector.cs" />
+    <Compile Include="UserInterface\RelayCommand.cs" />
+    <Compile Include="UserInterface\RemoveSubstringExtension.cs" />
+    <Compile Include="UserInterface\SelectOnFocusBehavior.cs" />
+    <Compile Include="UserInterface\ValidatingDialogWindow.cs" />
+    <Compile Include="UserInterface\ValidatingViewModel.cs" />
+    <Compile Include="UserInterface\ViewModel.cs" />
+    <Compile Include="UserInterface\WindowAutoSizeBehavior.cs" />
+    <Compile Include="Versions\VersionFileReader.cs" />
+    <Compile Include="VisualStudio\EditorIntegration.cs" />
+    <Compile Include="VisualStudio\IEditorIntegration.cs" />
+    <Compile Include="VisualStudio\IEditorInterfaces.cs" />
+    <Compile Include="VisualStudio\INuGetRepository.cs" />
+    <Compile Include="VisualStudio\IProjectSettings.cs" />
+    <Compile Include="VisualStudio\IThreadedWaitDialogService.cs" />
+    <Compile Include="VisualStudio\IVisualStudioIntegration.cs" />
+    <Compile Include="VisualStudio\NuGetRepository.cs" />
+    <Compile Include="VisualStudio\ProjectSettings.cs" />
+    <Compile Include="VisualStudio\ProjectSettingsExtensions.cs" />
+    <Compile Include="VisualStudio\VisualStudioIntegration.cs" />
+    <Compile Include="VisualStudio\VsShellDialogService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="UI\AddCancelButtonControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\ApplicationResources.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\AreaScaffolderDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\ControllerNameControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\ControllerScaffolderDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\ControllerWithContextControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\CreateDataContextDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\DependencyScaffolderDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\StyleResources.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\ViewScaffolderControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\ViewScaffolderDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\_TemplateIconSample.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\_TemplateIconSample1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Templates\AssemblyVersions.xml" />
+    <Content Include="Templates\PackageVersions5.0.0.xml" />
+    <Content Include="Templates\PackageVersions5.1.0.xml" />
+    <Content Include="Templates\PackageVersions5.1.1.xml" />
+    <Content Include="Templates\PackageVersions5.1.2.xml" />
+    <Content Include="Templates\PackageVersions5.2.0.xml" />
+    <Content Include="Templates\PackageVersions5.2.2.xml" />
+    <Content Include="Templates\PackageVersions5.2.3.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,163 @@
+﻿<UserControl xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    x:Class="HMVScaffolder.Mvc.ViewScaffolderControl">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="StyleResources.xaml"/>
+                <ResourceDictionary Source="ApplicationResources.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <StackPanel Grid.IsSharedSizeScope="True">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition SharedSizeGroup="LabelColumn"/>
+                <ColumnDefinition Width="20"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Row="0"
+                     Grid.Column="0"
+                     Content="View _name:"
+                     Target="{Binding ElementName=viewNameTextBox}"/>
+            <TextBox Name="viewNameTextBox"
+                     Grid.Row="0"
+                     Grid.Column="2"
+                     Text="{Binding ViewName,UpdateSourceTrigger=PropertyChanged}">
+                <!--<TextBox.Name>
+                    <ui:RemoveSubstring x:_PositionalParameters="View _name:"/>
+                </TextBox.Name>-->
+            </TextBox>
+            <Label Grid.Row="1"
+                     Grid.Column="0"
+                     Content="_Template:"
+                     Target="{Binding ElementName=templateNameComboBox}"
+                     Visibility="{Binding IsViewTemplateSelectorVisible,Mode=OneTime,Converter={StaticResource BoolToVisibility}}"/>
+            <ComboBox Name="templateNameComboBox"
+                     Grid.Row="1"
+                     Grid.Column="2"
+                     DisplayMemberPath="DisplayName"
+                     IsEditable="True"
+                     TextSearch.TextPath="DisplayName"
+                     ItemsSource="{Binding ViewTemplates}"
+                     SelectedItem="{Binding ViewTemplate,Mode=OneWayToSource}"
+                     Text="{Binding ViewTemplateSearchText,UpdateSourceTrigger=PropertyChanged}"
+                     Visibility="{Binding IsViewTemplateSelectorVisible,Mode=OneTime,Converter={StaticResource BoolToVisibility}}">
+                <!--<ComboBox.Name>
+                    <ui:RemoveSubstring x:_PositionalParameters="_Template:"/>
+                </ComboBox.Name>-->
+            </ComboBox>
+        </Grid>
+        <StackPanel Style="{StaticResource StackPanelModelEnabled}">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition SharedSizeGroup="LabelColumn"/>
+                    <ColumnDefinition Width="20"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Row="0"
+                         Grid.Column="0"
+                         Content="_Model class:"
+                         Target="{Binding ElementName=modelTypeComboBox}"/>
+                <ComboBox Name="modelTypeComboBox"
+                         Grid.Row="0"
+                         Grid.Column="3"
+                         IsEditable="True"
+                         TextSearch.TextPath="DisplayName"
+                         DisplayMemberPath="DisplayName"
+                         ItemsSource="{Binding ModelTypes}"
+                         SelectedItem="{Binding ModelType,Mode=OneWayToSource}"
+                         Text="{Binding ModelTypeName,Mode=TwoWay,UpdateSourceTrigger=LostFocus}">
+                    <!--<ComboBox.Name>
+                        <ui:RemoveSubstring x:_PositionalParameters="_Model class:"/>
+                    </ComboBox.Name>-->
+                </ComboBox>
+                <Label Grid.Row="1"
+                         Grid.Column="0"
+                         Content="_Data context class:"
+                         Target="{Binding ElementName=dataContextComboBox}"
+                         Visibility="{Binding IsDataContextSelectorVisible,Mode=OneTime,Converter={StaticResource BoolToVisibility}}"/>
+                <ComboBox Name="dataContextComboBox"
+                         Grid.Row="1"
+                         Grid.Column="2"
+                         IsEditable="True"
+                         TextSearch.TextPath="DisplayName"
+                         DisplayMemberPath="DisplayName"
+                         ItemsSource="{Binding DataContextTypes}"
+                         SelectedItem="{Binding DataContextType,Mode=OneWayToSource}"
+                         Text="{Binding DataContextTypeName,UpdateSourceTrigger=LostFocus}"
+                         Visibility="{Binding IsDataContextSelectorVisible,Mode=OneTime,Converter={StaticResource BoolToVisibility}}">
+                    <!--<ComboBox.Name>
+                        <ui:RemoveSubstring x:_PositionalParameters="Data context class:"/>
+                    </ComboBox.Name>-->
+                </ComboBox>
+            </Grid>
+        </StackPanel>
+        <StackPanel>
+            <Label Content="Options:"/>
+            <CheckBox Name="partialViewsCheckBox"
+                     Content="_Create as a partial view"
+                     IsChecked="{Binding Path=IsPartialViewSelected,Mode=TwoWay}"/>
+            <CheckBox Name="referenceScriptLibrariesCheckBox"
+                     Content="_Reference script libraries"
+                     ToolTipService.ShowOnDisabled="True"
+                     IsEnabled="{Binding Path=IsViewWithModelSelected}"
+                     IsChecked="{Binding IsReferenceScriptLibrariesSelected}">
+                <CheckBox.Style>
+                    <Style TargetType="{x:Type CheckBox}" BasedOn="{StaticResource {x:Type CheckBox}}">
+                        <Style.Triggers>
+                            <Trigger Property="UIElement.IsEnabled" Value="False">
+                                <Setter Property="FrameworkElement.ToolTip" Value="(without model)"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </CheckBox.Style>
+            </CheckBox>
+            <CheckBox Name="useLayoutPageCheckBox"
+                     Style="{StaticResource BottomCheckBox}"
+                     Content="_Use a layout page:"
+                     IsEnabled="{Binding Path=IsPartialViewSelected,Converter={StaticResource InverseBooleanConverter}}"
+                     IsChecked="{Binding Path=IsLayoutPageSelected}"/>
+            <Grid Margin="20 0 0 5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.IsEnabled>
+                    <MultiBinding Mode="OneWay" Converter="{StaticResource MultiAndBooleanConverter}">
+                        <Binding ElementName="useLayoutPageCheckBox" Path="IsChecked"/>
+                        <Binding ElementName="useLayoutPageCheckBox" Path="IsEnabled"/>
+                    </MultiBinding>
+                </Grid.IsEnabled>
+                <TextBox Name="layoutPageFileTextBox"
+                         Grid.Column="0"
+                         Grid.Row="0"
+                         AutomationProperties.Name="Specify a layout page"
+                         Text="{Binding LayoutPageFile}"/>
+                <Button Name="browseFiles"
+                         Grid.Column="1"
+                         Grid.Row="0"
+                         Style="{StaticResource SmallButton}"
+                         Content="..."
+                         AutomationProperties.Name="Choose a layout page"
+                         Command="{Binding SelectLayoutCommand}"/>
+                <Label Style="{StaticResource LayoutLabel}"
+                         Grid.ColumnSpan="2"
+                         Grid.Row="1"
+                         Content="(Leave empty if it is set in a Razor __viewstart file)"/>
+            </Grid>
+        </StackPanel>
+    </StackPanel>
+</UserControl>

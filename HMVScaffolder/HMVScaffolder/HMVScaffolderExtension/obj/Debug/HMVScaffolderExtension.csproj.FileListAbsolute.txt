@@ -1,0 +1,17 @@
+\\lan\dfs\users\justinfarrugia\My Documents\Visual Studio 2015\Projects\HMVScaffolder\HMVScaffolder\HMVScaffolderExtension\bin\Debug\HMVScaffolder.dll
+\\lan\dfs\users\justinfarrugia\My Documents\Visual Studio 2015\Projects\HMVScaffolder\HMVScaffolder\HMVScaffolderExtension\bin\Debug\HMVScaffolderExtension.dll.config
+\\lan\dfs\users\justinfarrugia\My Documents\Visual Studio 2015\Projects\HMVScaffolder\HMVScaffolder\HMVScaffolderExtension\bin\Debug\HMVScaffolderExtension.vsix
+\\lan\dfs\users\justinfarrugia\My Documents\Visual Studio 2015\Projects\HMVScaffolder\HMVScaffolder\HMVScaffolderExtension\bin\Debug\extension.vsixmanifest
+\\lan\dfs\users\justinfarrugia\My Documents\Visual Studio 2015\Projects\HMVScaffolder\HMVScaffolder\HMVScaffolderExtension\obj\Debug\HMVScaffolderExtension.csproj.CoreCompileInputs.cache
+\\lan\dfs\users\justinfarrugia\My Documents\Visual Studio 2015\Projects\HMVScaffolder\HMVScaffolder\HMVScaffolderExtension\obj\Debug\HMVScaffolderExtension.dll
+\\lan\dfs\users\justinfarrugia\My Documents\Visual Studio 2015\Projects\HMVScaffolder\HMVScaffolder\HMVScaffolderExtension\obj\Debug\HMVScaffolderExtension.pdb
+\\lan\dfs\users\justinfarrugia\My Documents\Visual Studio 2015\Projects\HMVScaffolder\HMVScaffolder\HMVScaffolderExtension\obj\Debug\extension.vsixmanifest
+\\lan\dfs\Users\justinfarrugia\My Documents\Visual Studio 2015\Projects\HMVScaffolder\HMVScaffolder\HMVScaffolderExtension\obj\Debug\HMVScaffolderExtension.csprojResolveAssemblyReference.cache
+C:\Git\Scaffolding\HMVScaffolder\HMVScaffolder\HMVScaffolderExtension\bin\Debug\HMVScaffolderExtension.dll.config
+C:\Git\Scaffolding\HMVScaffolder\HMVScaffolder\HMVScaffolderExtension\bin\Debug\HMVScaffolderExtension.vsix
+C:\Git\Scaffolding\HMVScaffolder\HMVScaffolder\HMVScaffolderExtension\bin\Debug\extension.vsixmanifest
+C:\Git\Scaffolding\HMVScaffolder\HMVScaffolder\HMVScaffolderExtension\obj\Debug\HMVScaffolderExtension.csprojResolveAssemblyReference.cache
+C:\Git\Scaffolding\HMVScaffolder\HMVScaffolder\HMVScaffolderExtension\obj\Debug\HMVScaffolderExtension.csproj.CoreCompileInputs.cache
+C:\Git\Scaffolding\HMVScaffolder\HMVScaffolder\HMVScaffolderExtension\obj\Debug\HMVScaffolderExtension.dll
+C:\Git\Scaffolding\HMVScaffolder\HMVScaffolder\HMVScaffolderExtension\obj\Debug\HMVScaffolderExtension.pdb
+C:\Git\Scaffolding\HMVScaffolder\HMVScaffolder\HMVScaffolderExtension\obj\Debug\extension.vsixmanifest
